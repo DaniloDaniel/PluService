@@ -8,6 +8,16 @@ Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
 
+#tmp
+*.user
+*.vs
+*.suo
+*.bak
+*.cache
+*.log
+*.tmp
+*.orig
+
 # Dump file
 *.stackdump
 
