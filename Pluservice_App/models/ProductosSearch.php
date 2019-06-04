@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Clientes;
+use app\models\Productos;
 
 /**
- * ClientesSearch represents the model behind the search form of `app\models\Clientes`.
+ * ProductosSearch represents the model behind the search form of `app\models\Productos`.
  */
-class ClientesSearch extends Clientes
+class ProductosSearch extends Productos
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class ClientesSearch extends Clientes
     public function rules()
     {
         return [
-            [['id', 'telefono'], 'integer'],
-            [['nombre', 'direccion', 'email'], 'safe'],
+            [['id', 'valor', 'categoria'], 'integer'],
+            [['nombre', 'descripcion'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class ClientesSearch extends Clientes
      */
     public function search($params)
     {
-        $query = Clientes::find();
+        $query = Productos::find();
 
         // add conditions that should always apply here
 
@@ -59,12 +59,12 @@ class ClientesSearch extends Clientes
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'telefono' => $this->telefono,
+            'valor' => $this->valor,
+            'categoria' => $this->categoria,
         ]);
 
         $query->andFilterWhere(['ilike', 'nombre', $this->nombre])
-            ->andFilterWhere(['ilike', 'direccion', $this->direccion])
-            ->andFilterWhere(['ilike', 'email', $this->email]);
+            ->andFilterWhere(['ilike', 'descripcion', $this->descripcion]);
 
         return $dataProvider;
     }

@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Clientes */
+/* @var $model app\models\Categorias */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Clientes', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Categorias', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="clientes-view">
+<div class="categorias-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Eliminar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Estas seguro que desear eliminar este cliente?',
+                'confirm' => '¿Esta seguro/a que desea eliminar esta categoría?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -31,9 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'nombre',
-            'direccion',
-            'email:email',
-            'telefono',
+            'descripcion',
         ],
     ]) ?>
 

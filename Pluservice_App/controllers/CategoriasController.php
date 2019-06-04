@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Clientes;
-use app\models\ClientesSearch;
+use app\models\Categorias;
+use app\models\CategoriasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ClientesController implements the CRUD actions for Clientes model.
+ * CategoriasController implements the CRUD actions for Categorias model.
  */
-class ClientesController extends Controller
+class CategoriasController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class ClientesController extends Controller
     }
 
     /**
-     * Lists all Clientes models.
+     * Lists all Categorias models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ClientesSearch();
+        $searchModel = new CategoriasSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class ClientesController extends Controller
     }
 
     /**
-     * Displays a single Clientes model.
+     * Displays a single Categorias model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class ClientesController extends Controller
     }
 
     /**
-     * Creates a new Clientes model.
+     * Creates a new Categorias model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Clientes();
+        $model = new Categorias();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class ClientesController extends Controller
     }
 
     /**
-     * Updates an existing Clientes model.
+     * Updates an existing Categorias model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class ClientesController extends Controller
     }
 
     /**
-     * Deletes an existing Clientes model.
+     * Deletes an existing Categorias model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class ClientesController extends Controller
     }
 
     /**
-     * Finds the Clientes model based on its primary key value.
+     * Finds the Categorias model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Clientes the loaded model
+     * @return Categorias the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Clientes::findOne($id)) !== null) {
+        if (($model = Categorias::findOne($id)) !== null) {
             return $model;
         }
 
