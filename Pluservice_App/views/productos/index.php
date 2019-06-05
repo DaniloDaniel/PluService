@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\ClientesSearch */
+/* @var $searchModel app\models\ProductosSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Clientes';
+$this->title = 'Productos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="clientes-index">
+<div class="productos-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <p> Módulo de clientes de PluService. </p><br/>
+    <p> Módulo de productos de PluService. </p><br/>
     <p>
-        <?= Html::a('Crear Cliente', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Productos', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,9 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'nombre',
-            'direccion',
-            'email:email',
-            'telefono',
+            'valor',
+            'descripcion',
+            'categoria',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -29,12 +29,11 @@ class Clientes extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'nombre', 'email', 'telefono'], 'required'],
+            [['nombre', 'email', 'telefono'], 'required'],
             [['telefono'], 'default', 'value' => null],
             [['telefono'], 'integer'],
-            [['id'], 'string', 'max' => 15],
             [['nombre', 'direccion', 'email'], 'string', 'max' => 30],
-            [['id'], 'unique'],
+            
         ];
     }
 
