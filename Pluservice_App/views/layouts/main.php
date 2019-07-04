@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\User;
 
 AppAsset::register($this);
 ?>
@@ -39,9 +40,15 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Inicio', 'url' => ['/site/index']],
-            ['label' => 'Informacion', 'url' => ['/site/about']],
+            //['label' => 'Informacion', 'url' => ['/site/about']],
             ['label' => 'Contacto', 'url' => ['/site/contact']],
             ['label' => 'Clientes', 'url' => ['/clientes/index']],
+            ['label' => 'Productos', 'url' => ['/productos/index']],
+            ['label' => 'Categorías', 'url' => ['/categorias/index']],
+            ['label' => 'Proveedores', 'url' => ['/proveedores/index']],
+            ['label' => 'Compras-Prov', 'url' => ['/prodproveedor/index']],
+            ['label' => 'Ventas', 'url' => ['/ventas/index']],
+
             Yii::$app->user->isGuest ? (
                 ['label' => 'Iniciar Sesion', 'url' => ['/site/login']]
             ) : (
@@ -70,9 +77,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; PluService <?= date('Y') ?> - Servicios Gráficos </br>N° Contacto: 99887766 </br>Arica-Chile</p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right"> Elaborado por Heraldo Ubilla Tapia</br> <?= Yii::powered() ?></p>
     </div>
 </footer>
 
