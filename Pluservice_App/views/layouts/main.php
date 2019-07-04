@@ -48,22 +48,7 @@ AppAsset::register($this);
             ['label' => 'Proveedores', 'url' => ['/proveedores/index']],
             ['label' => 'Compras-Prov', 'url' => ['/prodproveedor/index']],
             ['label' => 'Ventas', 'url' => ['/ventas/index']],
-            //nuevo agregando menu visible para usuario "admin"
-            /*  ['label' => 'Productos', 'url' => ['/productos/index'], 'visible' => User::admin(), 'items' => [
-                    ['label' => 'Lista Productos', 'url' => 'index.php?r=productos/index'],
-                    ['label' => 'Agregar Productos', 'url' => 'index.php?r=productos/create'],
-                    ['label' => 'Modificar Productos', 'url' => 'index.php?r=productos/update'],
-                    ['label' => 'Ver Producto', 'url' => 'index.php?r=productos/view'],
-                ]], 
-            */
-            /*  Yii::$app->user->isGuest ?
-                    ['label' => 'Login', 'url' => ['/site/login']] :
-                    ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                      'url' => ['/site/logout'],
-                      'linkOptions' => ['data-method' => 'post']
-                    ],
-                ],
-            */
+
             Yii::$app->user->isGuest ? (
                 ['label' => 'Iniciar Sesion', 'url' => ['/site/login']]
             ) : (
