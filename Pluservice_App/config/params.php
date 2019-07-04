@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
-    'senderEmail' => 'noreply@example.com',
-    'senderName' => 'Example.com mailer',
+    'adminEmail' => 'heraldo.neo2005@gmail.com',
+    //'title' => 'PluService WebApp',
+    //'salt' => 'fsddsflj38343lj0',
 ];

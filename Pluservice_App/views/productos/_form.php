@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'descripcion')->textInput(['maxlength' => true]) ?>
     
     <?= $form->field($model, 'categoria')->dropDownList(ArrayHelper::map(\app\models\Categorias::find()->all(), 'id', 'nombre'), ['prompt' => 'Seleccione Uno' ]) ?>
-        
+    
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>

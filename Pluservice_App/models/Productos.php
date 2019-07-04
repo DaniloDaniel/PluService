@@ -34,7 +34,7 @@ class Productos extends \yii\db\ActiveRecord
             [['nombre', 'descripcion', 'categoria'], 'required'],
             [['valor', 'categoria'], 'default', 'value' => null],
             [['valor', 'categoria'], 'integer'],
-            [['nombre', 'descripcion'], 'string', 'max' => 30],
+            [['nombre', 'descripcion'], 'string', 'max' => 80],
             [['categoria'], 'exist', 'skipOnError' => true, 'targetClass' => Categorias::className(), 'targetAttribute' => ['categoria' => 'id']],
         ];
     }
