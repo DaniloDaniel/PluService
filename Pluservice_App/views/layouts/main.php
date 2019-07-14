@@ -42,12 +42,12 @@ AppAsset::register($this);
             ['label' => 'Inicio', 'url' => ['/site/index']],
             //['label' => 'Informacion', 'url' => ['/site/about']],
             ['label' => 'Contacto', 'url' => ['/site/contact']],
-            ['label' => 'Clientes', 'url' => ['/clientes/index']],
-            ['label' => 'Productos', 'url' => ['/productos/index']],
-            ['label' => 'Categorías', 'url' => ['/categorias/index']],
-            ['label' => 'Proveedores', 'url' => ['/proveedores/index']],
-            ['label' => 'Compras-Prov', 'url' => ['/prodproveedor/index']],
-            ['label' => 'Ventas', 'url' => ['/ventas/index']],
+            ['label' => 'Clientes', 'url' => ['/clientes/index'], 'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Productos', 'url' => ['/productos/index'], 'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Categorías', 'url' => ['/categorias/index'], 'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Proveedores', 'url' => ['/proveedores/index'], 'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Compras-Prov', 'url' => ['/prodproveedor/index'], 'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Ventas', 'url' => ['/ventas/index'], 'visible' => !Yii::$app->user->isGuest],
 
             Yii::$app->user->isGuest ? (
                 ['label' => 'Iniciar Sesion', 'url' => ['/site/login']]
