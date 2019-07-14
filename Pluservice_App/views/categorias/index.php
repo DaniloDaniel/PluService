@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+//use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CategoriasSearch */
@@ -25,7 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            [
+                'class'=>'\kartik\grid\DataColumn',
+                'attribute'=>'id',
+                'format'=>'raw',
+                'hAlign'=>'center',
+                'width'=>'100px',
+                
+            ],
             'nombre',
             'descripcion',
 

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+//use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Productos */
@@ -34,7 +35,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'valor',
             'descripcion',
             'categoria',
-        ],
+            'attribute' => 'categoria0.nombre',
+           ],
+        
     ]) ?>
 
 </div>

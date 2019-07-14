@@ -19,6 +19,7 @@ use yii\db\ActiveRecord;
 
 class SiteController extends Controller
 {
+    //funcion para crear un registro de usuarios (Users)
     private function randKey($str='', $long=0)
     {
         $key = null;
@@ -155,7 +156,10 @@ class SiteController extends Controller
             }
         }
         return $this->render("register", ["model" => $model, "msg" => $msg]);
-    }
+    } 
+    //fin de la funcion registro de usuarios (Users)
+    
+   
     public function behaviors()
     {
         return [

@@ -60,4 +60,5 @@ class Productos extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Categorias::className(), ['id' => 'categoria']);
     }
+    
 }
