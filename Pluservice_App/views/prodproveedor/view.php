@@ -30,8 +30,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'pprov_id',
             'descripcion',
-            'producto',
-            'proveedor',
+            [
+                'attribute' => 'Nombre Producto',
+                'value' => $model->producto0->nombre,
+            ],
+            [
+                'attribute' => 'Código Producto',
+                'value' => $model->producto0->id,
+            ],
+            [
+                'attribute' => 'Nombre Proveedor',
+                'value' => $model->proveedor0->nombre,
+            ],
+            [
+                'attribute' => 'Código Proveedor',
+                'value' => $model->proveedor0->id,
+            ],
+            //'attribute' => 'proveedor0.nombre',
         ],
     ]) ?>
 

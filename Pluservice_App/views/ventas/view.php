@@ -7,8 +7,9 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Ventas */
 
 $this->title = $model->id_venta;
-$this->title = 'Código registro: 00'.$model->id_venta. ' - '.'Producto: N° 00'.$model->producto.' - '.'Cliente: N° 00'. $model->cliente;
-
+$this->title = 'Código registro: 00'.$model->id_venta. ' - ';
+$this->title .= 'Venta de '.$model->producto0->nombre.' a '.$model->cliente0->nombre;
+        
 $this->params['breadcrumbs'][] = ['label' => 'Ventas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -33,8 +34,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id_venta',
             'fecha',
-            'cliente',
-            'producto',
+            [
+                'attribute' => 'Nombre Cliente',
+                'value' => $model->cliente0->nombre,
+            ],
+            [
+                'attribute' => 'Código Cliente',
+                'value' => $model->cliente0->id,
+            ],
+            [
+                'attribute' => 'Nombre Producto',
+                'value' => $model->producto0->nombre,
+            ],
+            [
+                'attribute' => 'Código Producto',
+                'value' => $model->producto0->id,
+            ],
             'cantidad',
             'total',
             'descripcion',

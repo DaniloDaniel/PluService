@@ -1,0 +1,2 @@
+
+        $compoundLevel = $compoundLevel ?? $this->getCompoundLevel($children);

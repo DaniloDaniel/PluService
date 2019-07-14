@@ -38,7 +38,7 @@ class Ventas extends \yii\db\ActiveRecord
             [['fecha'], 'safe'],
             [['cliente', 'producto', 'cantidad', 'total'], 'default', 'value' => null],
             [['cliente', 'producto', 'cantidad', 'total'], 'integer'],
-            [['descripcion'], 'string', 'max' => 80],
+            [['descripcion'], 'string', 'max' => 100],
             [['cliente'], 'exist', 'skipOnError' => true, 'targetClass' => Clientes::className(), 'targetAttribute' => ['cliente' => 'id']],
             [['producto'], 'exist', 'skipOnError' => true, 'targetClass' => Productos::className(), 'targetAttribute' => ['producto' => 'id']],
         ];

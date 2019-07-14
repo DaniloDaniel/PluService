@@ -34,7 +34,7 @@ class Prodproveedor extends \yii\db\ActiveRecord
             [['descripcion', 'producto', 'proveedor'], 'required'],
             [['producto', 'proveedor'], 'default', 'value' => null],
             [['producto', 'proveedor'], 'integer'],
-            [['descripcion'], 'string', 'max' => 50],
+            [['descripcion'], 'string', 'max' => 100],
             [['producto'], 'exist', 'skipOnError' => true, 'targetClass' => Productos::className(), 'targetAttribute' => ['producto' => 'id']],
             [['proveedor'], 'exist', 'skipOnError' => true, 'targetClass' => Proveedores::className(), 'targetAttribute' => ['proveedor' => 'id']],
         ];
@@ -48,8 +48,8 @@ class Prodproveedor extends \yii\db\ActiveRecord
         return [
             'pprov_id' => 'Código Registro',
             'descripcion' => 'Descripción',
-            'producto' => 'ID Producto',
-            'proveedor' => 'ID Proveedor',
+            'producto' => 'Producto',
+            'proveedor' => 'Proveedor',
         ];
     }
 

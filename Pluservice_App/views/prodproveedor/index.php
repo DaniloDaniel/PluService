@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+//use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ProdproveedorSearch */
@@ -18,18 +19,44 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
+        <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'pprov_id',
-            'descripcion',
-            'producto',
-            'proveedor',
-
+            ['class'=>'kartik\grid\SerialColumn'],
+            [
+                'class'=>'\kartik\grid\DataColumn',
+                'attribute'=>'pprov_id',
+                'format'=>'raw',
+                'hAlign'=>'center',
+                'width'=>'100px',
+                
+            ],
+            [
+                'attribute'=>'producto',
+                'format'=>'raw',
+                'value'=>'producto0.nombre',
+                'vAlign'=>'middle',
+                'hAlign'=>'center',
+                'width'=> '150px',
+            ],
+            [
+                'attribute'=>'proveedor',
+                'format'=>'raw',
+                'value'=>'proveedor0.nombre',
+                'vAlign'=>'middle',
+                'hAlign'=>'center',
+                'width'=> '150px',
+            ],
+            [
+                'class'=>'\kartik\grid\DataColumn',
+                'attribute'=>'descripcion',
+                'format'=>'raw',
+                'vAlign'=>'middle',
+                'width'=> '450px',
+            ],
             ['class' => 'yii\grid\ActionColumn'],
+
         ],
     ]); ?>
 
