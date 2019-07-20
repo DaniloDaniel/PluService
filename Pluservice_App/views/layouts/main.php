@@ -40,13 +40,14 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Inicio', 'url' => ['/site/index']],
-            //['label' => 'Informacion', 'url' => ['/site/about']],
-            ['label' => 'Contacto', 'url' => ['/site/contact']],
+            ['label' => 'Información', 'url' => ['/site/about']],
+            //['label' => 'Contacto', 'url' => ['/site/contact']],
+            ['label' => 'Catalogo', 'url' => ['/site/register']],
             ['label' => 'Clientes', 'url' => ['/clientes/index'], 'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Productos', 'url' => ['/productos/index'], 'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Categorías', 'url' => ['/categorias/index'], 'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Proveedores', 'url' => ['/proveedores/index'], 'visible' => !Yii::$app->user->isGuest],
-            ['label' => 'Compras-Prov', 'url' => ['/prodproveedor/index'], 'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Compras', 'url' => ['/prodproveedor/index'], 'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Ventas', 'url' => ['/ventas/index'], 'visible' => !Yii::$app->user->isGuest],
 
             Yii::$app->user->isGuest ? (
@@ -77,11 +78,18 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; PluService <?= date('Y') ?> - Servicios Gráficos </br>N° Contacto: 99887766 </br>Arica-Chile</p>
-
-        <p class="pull-right"> Elaborado por Heraldo Ubilla Tapia</br> <?= Yii::powered() ?></p>
-    </div>
+        <p class="pull-left">
+            <div class="col-lg-2">
+                <img src="images/PS/logo1.gif" alt="logo">
+            </div>
+            <div class="col-lg-4">
+                &copy; PluService <?= date('Y') ?> - Servicios Gráficos </br>N° Contacto: 95433265 </br>Email: contactopluservice@gmail.com</br>Arica-Chile
+            </div>
+        
+        <p class="pull-right"><img src="images/PS/conveniomarco.gif" alt="marco"></p>
+    </div>   
 </footer>
+    
 
 <?php $this->endBody() ?>
 </body>
